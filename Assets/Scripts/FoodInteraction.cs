@@ -6,8 +6,8 @@ public class FoodInteraction : MonoBehaviour
 {
 
     // Start is called before the first frame update
-    public enum foodType { Ramen, Udon, Sushi };
-    public foodType type;
+    //public enum foodType { Ramen, Udon, Sushi };
+    //public foodType type;
     public bool pressed = false;
     public GameObject player;
     public GameObject EmptyBowl;
