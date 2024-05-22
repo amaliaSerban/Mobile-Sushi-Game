@@ -219,8 +219,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.016485665, y: 0.034601945, z: 0.019302212}
-  m_Center: {x: 0.0007205045, y: -0.011752341, z: -0.0063108504}
+  m_Size: {x: 0.016485665, y: 0.036381695, z: 0.019302212}
+  m_Center: {x: 0.0007205045, y: -0.012642214, z: -0.0063108504}
 --- !u!4 &16193792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5e35e6aeea8d5244d96934a22c108f1f,
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressed: 0
   player: {fileID: 862330950}
-  EmptyBowl: {fileID: 919132149155446097, guid: 5e35e6aeea8d5244d96934a22c108f1f,
+  EmptyBowl: {fileID: 7859116377044283006, guid: e7ff63a4442fdcc4e9571b4acc3b9244,
     type: 3}
 --- !u!1001 &30481605
 PrefabInstance:
@@ -13323,7 +13323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressed: 0
   player: {fileID: 862330950}
-  EmptyBowl: {fileID: 919132149155446097, guid: da2a05c00e218b648ad2c29b75785ab2,
+  EmptyBowl: {fileID: 8292722397699377641, guid: b5cd500fa99227e4ebf5794d6f591e51,
     type: 3}
 --- !u!4 &1277788544 stripped
 Transform:

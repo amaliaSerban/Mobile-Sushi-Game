@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class NPCScript : MonoBehaviour
 {
     [SerializeField] GameObject table;
@@ -12,6 +13,8 @@ public class NPCScript : MonoBehaviour
     private Animator animator;
     [SerializeField] GameObject photoPlane;
     private GameObject randomizer;
+ 
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -37,6 +40,7 @@ public class NPCScript : MonoBehaviour
         if (other.tag == "food" && order.type.ToString()== other.name)
         {
             other.GetComponent<FoodInteraction>().PlaceOnTable(table.transform.position);
+            photoPlane.SetActive(false);
             animator.SetBool("eating", true);
             StartCoroutine(WaitUntilFinishEating());
            

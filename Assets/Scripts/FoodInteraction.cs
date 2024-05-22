@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FoodInteraction : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class FoodInteraction : MonoBehaviour
     public bool pressed = false;
     public GameObject player;
     public GameObject EmptyBowl;
+    private GameObject bowlInstance;
+    
     void Start()
     {
         
@@ -51,15 +54,15 @@ public class FoodInteraction : MonoBehaviour
         player.GetComponent<TouchMovement>().freeHands++;
         Debug.Log("hands= " + player.GetComponent<TouchMovement>().freeHands);
         StartCoroutine(WaitUntilEmptyBowl());
-       
-
-
     }
     IEnumerator WaitUntilEmptyBowl()
     {
         yield return new WaitForSeconds(4f);
-        Instantiate(EmptyBowl,gameObject.transform.position,gameObject.transform.rotation);
+        bowlInstance= Instantiate(EmptyBowl,gameObject.transform.position,gameObject.transform.rotation);
+        bowlInstance.GetComponent<EmptyBowlScript>().StartWait();
         Destroy(gameObject);
+        
 
     }
+   
 }
