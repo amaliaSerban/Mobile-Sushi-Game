@@ -19,22 +19,23 @@ public class Randomizer : MonoBehaviour
     }
     public Order OrderRandomizer()
     {
-        int i = Random.Range(0, 100);
-        for (int j = 0; j < orders.Length; j++)
-        {
-            if (i > orders[j].minProbability && i <= orders[j].maxProbability)
-            {
-                return orders[j];
-            }
+        int i = Random.Range(0, orders.Length);
+        //for (int j = 0; j < orders.Length; j++)
+        //{
+        //    if (i > orders[j].minProbability && i <= orders[j].maxProbability)
+        //    {
+        //        return orders[j];
+        //    }
 
-        }
-        return null;
+        //}
+        return orders[i];
     }
 }
 [System.Serializable]
-public class order
+public class Order
 {
     public enum foodType { Ramen, Udon, Sushi };
     public foodType type;
+    public Material foodImage;
     public int minProbability=0,maxProbability=0;
 }

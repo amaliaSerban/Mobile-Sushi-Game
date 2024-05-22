@@ -2326,6 +2326,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.040000007, y: 0.026077734, z: 0.019235803}
   m_Center: {x: -0.0000000018626451, y: -0.004209722, z: 0.0096179}
+--- !u!1 &184356668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184356670}
+  - component: {fileID: 184356669}
+  m_Layer: 0
+  m_Name: RandomizerObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &184356669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184356668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5463cd6b0cb1d844c9e59888e2873da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orders:
+  - type: 0
+    foodImage: {fileID: 2100000, guid: f9bf20e83b028f944a078b6daf161aec, type: 2}
+    minProbability: 0
+    maxProbability: 30
+  - type: 1
+    foodImage: {fileID: 2100000, guid: 6c657409b85f78944986681683d519ca, type: 2}
+    minProbability: 30
+    maxProbability: 60
+  - type: 2
+    foodImage: {fileID: 2100000, guid: 5e6030540d3fc4f4fbc412126b7f1741, type: 2}
+    minProbability: 60
+    maxProbability: 100
+--- !u!4 &184356670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184356668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.084455, y: 3.0411954, z: 29.12148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &185342460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6718,7 +6775,7 @@ Transform:
   m_GameObject: {fileID: 704307517}
   serializedVersion: 2
   m_LocalRotation: {x: 0.51446766, y: -0, z: -0, w: 0.8575098}
-  m_LocalPosition: {x: -18.07, y: 7.56, z: 0.21}
+  m_LocalPosition: {x: -18.67, y: 7.56, z: 0.21}
   m_LocalScale: {x: 0.431, y: 1, z: 0.48599997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13341,8 +13398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 1970648849}
-  type: 1
-  orders: []
+  photoPlane: {fileID: 1355593736}
 --- !u!1001 &1298584383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13596,8 +13652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 1052601431}
-  type: 2
-  orders: []
+  photoPlane: {fileID: 249622331}
 --- !u!65 &1312177343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21846,3 +21901,4 @@ SceneRoots:
   - {fileID: 1009506466}
   - {fileID: 913202125}
   - {fileID: 911114823}
+  - {fileID: 184356670}
