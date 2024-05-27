@@ -13,7 +13,7 @@ public class NPCScript : MonoBehaviour
     private Animator animator;
     [SerializeField] GameObject photoPlane;
     private GameObject randomizer;
- 
+    private GameObject spawnerObj;
 
 
     // Start is called before the first frame update
@@ -22,11 +22,13 @@ public class NPCScript : MonoBehaviour
         animator = GetComponent<Animator>();
         randomizer = GameObject.Find("RandomizerObj");
         order = randomizer.GetComponent<Randomizer>().OrderRandomizer();
+        spawnerObj = GameObject.Find("FoodSpawner");
     }
     void Start()
     {
         Debug.Log(order.type.ToString());
         photoPlane.GetComponent<Renderer>().material = order.foodImage;
+       StartCoroutine( WaitUntilCookedFood());
     }
    
 
@@ -50,6 +52,14 @@ public class NPCScript : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         animator.SetBool("eating", false);
+
+    }
+    IEnumerator WaitUntilCookedFood()
+    {
+        //Debug.Log("before cook");
+        yield return new WaitForSeconds(4f);
+        spawnerObj.GetComponent < FoodSpawner>().SpawnFood(order);
+       // Debug.Log("after cook");
 
     }
 }

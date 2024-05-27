@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
@@ -8,7 +9,11 @@ public class FoodSpawner : MonoBehaviour
     [SerializeField] GameObject RamenPrefab;
     [SerializeField] GameObject UdonPrefab;
     [SerializeField] GameObject SushiPrefab;
-    [SerializeField] 
+
+    [SerializeField] Slot[] slots;
+
+  
+    //[SerializeField] 
     void Start()
     {
         
@@ -18,17 +23,67 @@ public class FoodSpawner : MonoBehaviour
         switch (food.type)
         { 
             case Order.foodType.Ramen:
-                Instantiate(RamenPrefab); break;
+                {
+                    GameObject newSlot = GetEmptySlot();
+                    if(newSlot != null)
+                    {
+                        Instantiate(RamenPrefab, newSlot.transform.position, newSlot.transform.rotation); break;
+                    }
+                    else { break; } 
+                }        
             case Order.foodType.Udon:
-                Instantiate(UdonPrefab); break;
+                {
+                    GameObject newSlot = GetEmptySlot();
+                    if (newSlot != null)
+                    {
+                        Instantiate(UdonPrefab, newSlot.transform.position, newSlot.transform.rotation); break;
+                    }
+                    else { break; }
+                }
+               
             case Order.foodType.Sushi:
-                Instantiate(SushiPrefab); break;
-
+                {
+                    GameObject newSlot = GetEmptySlot();
+                    if (newSlot != null)
+                    {
+                        Instantiate(SushiPrefab, newSlot.transform.position, newSlot.transform.rotation); break;
+                    }
+                    else { break; }
+                }
         }    
     }
+    public GameObject GetEmptySlot()
+    {   
+        if (slots[0].isEmpty == true)
+        {
+            slots[0].isEmpty = false;
+            return slots[0].slotObj;
+        }
+        if (slots[1].isEmpty == true)
+        {
+            slots[1].isEmpty = false;
+            return slots[1].slotObj; 
+        }
+        if(slots[2].isEmpty == true)
+        {
+            slots[2].isEmpty = false;
+            return slots[2].slotObj;
+        }
+       
+        return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
+[System.Serializable]
+public class Slot
+{ 
+    public GameObject slotObj;
+    public bool isEmpty;
+}
+
+

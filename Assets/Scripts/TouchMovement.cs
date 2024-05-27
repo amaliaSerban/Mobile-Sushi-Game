@@ -15,10 +15,10 @@ public class TouchMovement : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
     public int freeHands = 2;
+    
 
     public Animator animator;
-    private bool isWalking=false;
-
+   
     // Start is called before the first frame update
     private void Awake()
     {
