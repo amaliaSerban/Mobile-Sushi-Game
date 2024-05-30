@@ -16,7 +16,7 @@ public class FoodInteraction : MonoBehaviour
     
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame

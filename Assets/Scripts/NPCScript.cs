@@ -8,7 +8,7 @@ public class NPCScript : MonoBehaviour
 {
     [SerializeField] GameObject table;
     //public enum foodType { Ramen, Udon, Sushi };
-   // public foodType type;
+    // public foodType type;
     private Order order;
     private Animator animator;
     [SerializeField] GameObject photoPlane;
@@ -26,11 +26,11 @@ public class NPCScript : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log(order.type.ToString());
-        photoPlane.GetComponent<Renderer>().material = order.foodImage;
-       StartCoroutine( WaitUntilCookedFood());
+       // photoPlane.GetComponent<Renderer>().material = order.foodImage;
+       //   StartCoroutine(WaitUntilCookedFood());
+       StartCoroutine(WaitToOrder());
     }
-   
+
 
     // Update is called once per frame
     void Update()
@@ -39,29 +39,37 @@ public class NPCScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "food" && order.type.ToString()== other.name)
+        if (other.tag == "food" && order.type.ToString() == other.name)
         {
             other.GetComponent<FoodInteraction>().PlaceOnTable(table.transform.position);
             photoPlane.SetActive(false);
             animator.SetBool("eating", true);
             StartCoroutine(WaitUntilFinishEating());
-           
+
         }
+    }
+    IEnumerator WaitToOrder()
+    {
+        yield return new WaitForSeconds(4f);
+        Debug.Log(order.type.ToString());
+        photoPlane.SetActive(true);
+        photoPlane.GetComponent<Renderer>().material = order.foodImage;
+        StartCoroutine(WaitUntilCookedFood());
     }
     IEnumerator WaitUntilFinishEating()
     {
         yield return new WaitForSeconds(4f);
         animator.SetBool("eating", false);
-
+      
     }
-    IEnumerator WaitUntilCookedFood()
-    {
+     IEnumerator WaitUntilCookedFood()
+     {
         //Debug.Log("before cook");
         yield return new WaitForSeconds(4f);
         spawnerObj.GetComponent < FoodSpawner>().SpawnFood(order);
        // Debug.Log("after cook");
 
-    }
+     }
 }
 
 
