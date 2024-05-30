@@ -39,3 +39,4 @@ public class Order
     public Material foodImage;
     public int minProbability=0,maxProbability=0;
 }
+

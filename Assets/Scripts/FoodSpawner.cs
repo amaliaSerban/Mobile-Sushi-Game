@@ -27,7 +27,8 @@ public class FoodSpawner : MonoBehaviour
                     GameObject newSlot = GetEmptySlot();
                     if(newSlot != null)
                     {
-                        Instantiate(RamenPrefab, newSlot.transform.position, newSlot.transform.rotation); break;
+                        GameObject foodPrefab = Instantiate(RamenPrefab, newSlot.transform.position, newSlot.transform.rotation); 
+                        foodPrefab.name = "Ramen"; break;
                     }
                     else { break; } 
                 }        
@@ -36,7 +37,8 @@ public class FoodSpawner : MonoBehaviour
                     GameObject newSlot = GetEmptySlot();
                     if (newSlot != null)
                     {
-                        Instantiate(UdonPrefab, newSlot.transform.position, newSlot.transform.rotation); break;
+                        GameObject foodPrefab = Instantiate(UdonPrefab, newSlot.transform.position, newSlot.transform.rotation); 
+                        foodPrefab.name = "Udon"; break;
                     }
                     else { break; }
                 }
@@ -46,7 +48,8 @@ public class FoodSpawner : MonoBehaviour
                     GameObject newSlot = GetEmptySlot();
                     if (newSlot != null)
                     {
-                        Instantiate(SushiPrefab, newSlot.transform.position, newSlot.transform.rotation); break;
+                        GameObject foodPrefab=Instantiate(SushiPrefab, newSlot.transform.position, newSlot.transform.rotation);
+                        foodPrefab.name = "Sushi"; break;
                     }
                     else { break; }
                 }
