@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 public class NPCScript : MonoBehaviour
@@ -14,7 +15,7 @@ public class NPCScript : MonoBehaviour
     [SerializeField] GameObject photoPlane;
     private GameObject randomizer;
     private GameObject spawnerObj;
-
+    private NavMeshAgent agent;
 
     // Start is called before the first frame update
     private void Awake()
@@ -23,19 +24,22 @@ public class NPCScript : MonoBehaviour
         randomizer = GameObject.Find("RandomizerObj");
         order = randomizer.GetComponent<Randomizer>().OrderRandomizer();
         spawnerObj = GameObject.Find("FoodSpawner");
+
+        agent=GetComponent<NavMeshAgent>();
     }
     void Start()
     {
-       // photoPlane.GetComponent<Renderer>().material = order.foodImage;
-       //   StartCoroutine(WaitUntilCookedFood());
-       StartCoroutine(WaitToOrder());
+        // photoPlane.GetComponent<Renderer>().material = order.foodImage;
+        //   StartCoroutine(WaitUntilCookedFood());
+        agent.SetDestination(table.transform.position);
+        //StartCoroutine(WaitToOrder());
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -70,6 +74,15 @@ public class NPCScript : MonoBehaviour
        // Debug.Log("after cook");
 
      }
-}
+    IEnumerator WaitUntilReachTable()
+    {
+        yield return new WaitForSeconds(0.025f);
+        Debug.Log(agent.remainingDistance);
+        yield return new WaitUntil(() => agent.remainingDistance <= 0);
+        animator.SetBool("Walking", false);
+        StartCoroutine(WaitToOrder());
+    }
+  }
+
 
 
