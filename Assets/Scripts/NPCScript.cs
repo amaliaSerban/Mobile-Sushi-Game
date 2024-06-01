@@ -53,7 +53,7 @@ public class NPCScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "food" && order.type.ToString() == other.name)
+        if (other.tag == "food" && order.type.ToString() == other.name && ate==false)
         {
             other.GetComponent<FoodInteraction>().PlaceOnTable(table.platePosition.transform.position);
             table.orderPlane.SetActive(false);
