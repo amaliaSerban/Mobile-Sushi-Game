@@ -11,6 +11,7 @@ public class CustomerRandomizer : MonoBehaviour
     {
         int i = Random.Range(0, customers.Length);
         customers[i].table=RandomTable();
+        customers[i].table.isEmpty = false;
         return customers[i];
     }
     private Table RandomTable()
