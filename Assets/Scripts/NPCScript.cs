@@ -74,7 +74,7 @@ public class NPCScript : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         animator.SetBool("eating", false);
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         agent.SetDestination(exit.transform.position);
         animator.SetBool("walking", true);
         ate = true;
