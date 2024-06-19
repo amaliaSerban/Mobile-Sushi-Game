@@ -8,35 +8,45 @@ public class InstantiateCustomers : MonoBehaviour
     [SerializeField] GameObject spawnObj;
     private void Awake()
     {
-        
-    }
-    void Start()
-    {
         StartCoroutine(SpawnCustomers());
-       
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        
+           
+       
+       
+    }
+    void SpawnCustomer()
+    {
+        Customer newCustomer = gameObject.GetComponent<CustomerRandomizer>().RandomCustomer();
+        GameObject customer = Instantiate(newCustomer.customerPrefab, spawnObj.transform.position, spawnObj.transform.rotation);
+        customer.transform.tag = "Customer";
+        customer.GetComponent<NPCScript>().setTable(newCustomer.table);
     }
     IEnumerator SpawnCustomers()
     { 
         yield return new WaitForSeconds(1.5f);
-        Customer newCustomer = gameObject.GetComponent<CustomerRandomizer>().RandomCustomer();
-        GameObject customer = Instantiate(newCustomer.customerPrefab, spawnObj.transform.position, spawnObj.transform.rotation);
-        customer.GetComponent<NPCScript>().setTable(newCustomer.table);
+        SpawnCustomer();
 
         yield return new WaitForSeconds(4f);
-        newCustomer = gameObject.GetComponent<CustomerRandomizer>().RandomCustomer();
-        customer = Instantiate(newCustomer.customerPrefab, spawnObj.transform.position, spawnObj.transform.rotation);
-        customer.GetComponent<NPCScript>().setTable(newCustomer.table);
+        SpawnCustomer();
 
-        yield return new WaitForSeconds(5f);
-         newCustomer = gameObject.GetComponent<CustomerRandomizer>().RandomCustomer();
-        customer = Instantiate(newCustomer.customerPrefab, spawnObj.transform.position, spawnObj.transform.rotation);
-        customer.GetComponent<NPCScript>().setTable(newCustomer.table);
+        yield return new WaitForSeconds(7f);
+        SpawnCustomer();
+
+        yield return new WaitForSeconds(15f);
+        SpawnCustomer();
+
+        yield return new WaitForSeconds(15f);
+        SpawnCustomer();
+
+        yield return new WaitForSeconds(15f);
+        SpawnCustomer();
+
+        yield return new WaitForSeconds(15f);
+        SpawnCustomer();
+
 
     }
 }

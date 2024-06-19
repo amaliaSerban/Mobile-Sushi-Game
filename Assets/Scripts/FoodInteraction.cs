@@ -10,13 +10,17 @@ public class FoodInteraction : MonoBehaviour
     //public enum foodType { Ramen, Udon, Sushi };
     //public foodType type;
     public bool pressed = false;
+    public Slot slot;
     public GameObject player;
     public GameObject EmptyBowl;
     private GameObject bowlInstance;
+
+    private GameObject FoodSpawner;
     
     void Start()
     {
         player = GameObject.Find("Player");
+        FoodSpawner = GameObject.Find("FoodSpawner");
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class FoodInteraction : MonoBehaviour
     {
         
     }
+   
     private void OnTriggerEnter(Collider other) 
     {
         Debug.Log("trigger enter");
@@ -42,8 +47,16 @@ public class FoodInteraction : MonoBehaviour
                 }
                 gameObject.transform.parent = other.transform;
                 other.GetComponent<TouchMovement>().freeHands--;
-                Debug.Log("hands= " + other.GetComponent<TouchMovement>().freeHands);
                 pressed = false;
+                Debug.Log("hands= " + other.GetComponent<TouchMovement>().freeHands);
+                for(int i=0;i<=FoodSpawner.GetComponent<FoodSpawner>().slots.Length;i++)
+                {
+                    if (FoodSpawner.GetComponent<FoodSpawner>().slots[i].slotObj==slot.slotObj)
+                    {
+                        FoodSpawner.GetComponent<FoodSpawner>().slots[i].isEmpty = true;
+                    }
+                }
+               
             }
         }
     }
@@ -61,8 +74,6 @@ public class FoodInteraction : MonoBehaviour
         bowlInstance= Instantiate(EmptyBowl,gameObject.transform.position,gameObject.transform.rotation);
         bowlInstance.GetComponent<EmptyBowlScript>().StartWait();
         Destroy(gameObject);
-        
-
     }
    
 }

@@ -10,7 +10,7 @@ public class FoodSpawner : MonoBehaviour
     [SerializeField] GameObject UdonPrefab;
     [SerializeField] GameObject SushiPrefab;
 
-    [SerializeField] Slot[] slots;
+    public Slot[] slots;
 
   
     //[SerializeField] 
@@ -24,20 +24,25 @@ public class FoodSpawner : MonoBehaviour
         { 
             case Order.foodType.Ramen:
                 {
-                    GameObject newSlot = GetEmptySlot();
+                    Slot newSlot = GetEmptySlot();
                     if(newSlot != null)
                     {
-                        GameObject foodPrefab = Instantiate(RamenPrefab, newSlot.transform.position, newSlot.transform.rotation); 
+                        GameObject foodPrefab = Instantiate(RamenPrefab, newSlot.slotObj.transform.position, newSlot.slotObj.transform.rotation);
+                        foodPrefab.GetComponent<FoodInteraction>().slot = newSlot;
                         foodPrefab.name = "Ramen"; break;
                     }
-                    else { break; } 
+                    else 
+                    { 
+                        break; 
+                    } 
                 }        
             case Order.foodType.Udon:
                 {
-                    GameObject newSlot = GetEmptySlot();
+                    Slot newSlot = GetEmptySlot();
                     if (newSlot != null)
                     {
-                        GameObject foodPrefab = Instantiate(UdonPrefab, newSlot.transform.position, newSlot.transform.rotation); 
+                        GameObject foodPrefab = Instantiate(UdonPrefab, newSlot.slotObj.transform.position, newSlot.slotObj.transform.rotation);
+                        foodPrefab.GetComponent<FoodInteraction>().slot = newSlot;
                         foodPrefab.name = "Udon"; break;
                     }
                     else { break; }
@@ -45,32 +50,33 @@ public class FoodSpawner : MonoBehaviour
                
             case Order.foodType.Sushi:
                 {
-                    GameObject newSlot = GetEmptySlot();
+                    Slot newSlot = GetEmptySlot();
                     if (newSlot != null)
                     {
-                        GameObject foodPrefab=Instantiate(SushiPrefab, newSlot.transform.position, newSlot.transform.rotation);
+                        GameObject foodPrefab=Instantiate(SushiPrefab, newSlot.slotObj.transform.position, newSlot.slotObj.transform.rotation);
+                        foodPrefab.GetComponent<FoodInteraction>().slot = newSlot;
                         foodPrefab.name = "Sushi"; break;
                     }
                     else { break; }
                 }
         }    
     }
-    public GameObject GetEmptySlot()
+    public Slot GetEmptySlot()
     {   
         if (slots[0].isEmpty == true)
         {
             slots[0].isEmpty = false;
-            return slots[0].slotObj;
+            return slots[0];
         }
         if (slots[1].isEmpty == true)
         {
             slots[1].isEmpty = false;
-            return slots[1].slotObj; 
+            return slots[1]; 
         }
         if(slots[2].isEmpty == true)
         {
             slots[2].isEmpty = false;
-            return slots[2].slotObj;
+            return slots[2];
         }
        
         return null;
@@ -81,6 +87,10 @@ public class FoodSpawner : MonoBehaviour
     {
 
     }
+    //IEnumerator Queue()
+    //{
+    //    yield return new WaitUntil();
+    //}
 }
 [System.Serializable]
 public class Slot

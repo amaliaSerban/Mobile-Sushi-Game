@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4108172772267919395}
   - component: {fileID: 161396997511277038}
   - component: {fileID: 8111232956361165383}
-  - component: {fileID: 7431096544390917628}
   - component: {fileID: 824715945023804051}
+  - component: {fileID: 6017779040250586504}
   m_Layer: 0
   m_Name: Udon
   m_TagString: food
@@ -86,7 +86,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7431096544390917628
+--- !u!114 &824715945023804051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097045443589874197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176a834405a46374f82ac99151613263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressed: 0
+  slot:
+    slotObj: {fileID: 0}
+    isEmpty: 0
+  player: {fileID: 0}
+  EmptyBowl: {fileID: 1210625512679932793, guid: ccb9828253e05f74a9ce9952ba7edf7f,
+    type: 3}
+--- !u!65 &6017779040250586504
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,24 +124,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01763472, y: 0.02746159, z: 0.019302212}
-  m_Center: {x: 0.00254041, y: -0.008182168, z: -0.0063108504}
---- !u!114 &824715945023804051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097045443589874197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176a834405a46374f82ac99151613263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  player: {fileID: 0}
-  EmptyBowl: {fileID: 1210625512679932793, guid: ccb9828253e05f74a9ce9952ba7edf7f,
-    type: 3}
+  m_Size: {x: 0.011967297, y: 0.034001112, z: 0.019302214}
+  m_Center: {x: -0.000061893465, y: -0.011451921, z: -0.006310849}
 --- !u!1 &3209441994039955549
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,11 @@ public class CustomerRandomizer : MonoBehaviour
         customers[i].table.isEmpty = false;
         return customers[i];
     }
+    public void emptyTable(Table table)
+    {
+        Debug.Log("emptyTable");
+        tables[table.tableID].isEmpty = true;
+    }
     private Table RandomTable()
     {
         int i = Random.Range(0, tables.Length);
@@ -40,6 +45,7 @@ public class Customer
 [System.Serializable]
 public class Table
 {
+    public int tableID;
     public GameObject chair;
     public GameObject platePosition;
     public GameObject orderPlane;

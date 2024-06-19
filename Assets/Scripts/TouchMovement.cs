@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 
 public class TouchMovement : MonoBehaviour
@@ -60,22 +61,26 @@ public class TouchMovement : MonoBehaviour
          RaycastHit hit;
          if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
          {
-            //Debug.Log("test");
-            animator.SetBool("Walking", true);
-            if (hit.transform.tag == "food")
+            if(hit.transform.tag == "customer")
             {
-                Debug.Log("tap on food");
-                hit.transform.GetComponent<FoodInteraction>().pressed = true;
-                agent.destination = hit.transform.GetChild(0).transform.position;
+                canMove = false;
+            }
+            else
+            {
+                //Debug.Log("test");
+                animator.SetBool("Walking", true);
+                if (hit.transform.tag == "food")
+                {
+                    Debug.Log("tap on food");
+                    hit.transform.GetComponent<FoodInteraction>().pressed = true;
+                    agent.destination = hit.transform.GetChild(0).transform.position;
 
-            } 
-            else agent.destination = hit.point;
+                }
+                else agent.destination = hit.point;
 
-           StartCoroutine(WaitUntilReachTarget());
-            
-        }
-            
-        
+                StartCoroutine(WaitUntilReachTarget());
+            }
+         }
     }
     IEnumerator WaitUntilReachTarget()
     {
