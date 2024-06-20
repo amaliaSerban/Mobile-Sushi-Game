@@ -38,7 +38,7 @@ public class NPCScript : MonoBehaviour
 
         exit = GameObject.Find("spawnPoint");
         ate = false;
-        
+        selected=false;
     }
     void Start()
     {

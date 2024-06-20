@@ -49,7 +49,7 @@ public class FoodInteraction : MonoBehaviour
                 other.GetComponent<TouchMovement>().freeHands--;
                 pressed = false;
                 Debug.Log("hands= " + other.GetComponent<TouchMovement>().freeHands);
-                for(int i=0;i<=FoodSpawner.GetComponent<FoodSpawner>().slots.Length;i++)
+                for(int i=0;i<FoodSpawner.GetComponent<FoodSpawner>().slots.Length;i++)
                 {
                     if (FoodSpawner.GetComponent<FoodSpawner>().slots[i].slotObj==slot.slotObj)
                     {

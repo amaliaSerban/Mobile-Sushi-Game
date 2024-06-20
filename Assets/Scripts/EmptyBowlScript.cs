@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EmptyBowlScript : MonoBehaviour
 {
+    [SerializeField] GameObject coin;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class EmptyBowlScript : MonoBehaviour
     }
     IEnumerator WaitUntilBowlDissappear()
     {
-        yield return new WaitForSeconds(2f);
+       yield return new WaitForSeconds(2f);
+       GameObject coinInstance = Instantiate(coin, new Vector3(this.transform.position.x, 2.8f, this.transform.position.z), coin.transform.rotation);
        Destroy(gameObject);
     }
 }
