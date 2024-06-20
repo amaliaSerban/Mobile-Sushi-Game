@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4605736720564841464}
   - component: {fileID: 6037525083082534220}
   - component: {fileID: 4778282817943506930}
+  - component: {fileID: 2836633777211163685}
   m_Layer: 0
   m_Name: Rabbit_Blond
   m_TagString: Untagged
@@ -89,7 +90,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 7.9466276, y: 3.9874136, z: 9.295727}
   m_Center: {x: 0.5264592, y: 1.4937068, z: 4.1478634}
@@ -115,6 +116,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &2836633777211163685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248363801697826133}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.1756134, y: 3.9874136, z: 4.258661}
+  m_Center: {x: 0.24421692, y: 1.4937068, z: 1.6293309}
 --- !u!1 &298596890826748235
 GameObject:
   m_ObjectHideFlags: 0

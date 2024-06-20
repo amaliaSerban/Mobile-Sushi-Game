@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Randomizer : MonoBehaviour
 
@@ -36,7 +37,7 @@ public class Order
 {
     public enum foodType { Ramen, Udon, Sushi };
     public foodType type;
-    public Material foodImage;
+    public Sprite foodSprite;
     public int minProbability=0,maxProbability=0;
 }
 

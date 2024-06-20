@@ -1236,6 +1236,7 @@ GameObject:
   - component: {fileID: 8556698183941994652}
   - component: {fileID: 4937090546205778859}
   - component: {fileID: 3154633982680833112}
+  - component: {fileID: -4434345251979186992}
   m_Layer: 0
   m_Name: Rabbit_Pink
   m_TagString: Untagged
@@ -1301,7 +1302,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 7.9466276, y: 3.9874136, z: 9.295727}
   m_Center: {x: 0.5264592, y: 1.4937068, z: 4.1478634}
@@ -1338,6 +1339,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e1649807e7e114e8bc7fb5b58b91aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-4434345251979186992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078496006749395188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.1756134, y: 3.9874136, z: 4.258661}
+  m_Center: {x: 0.24421692, y: 1.4937068, z: 1.6293309}
 --- !u!1 &4111517306050481235
 GameObject:
   m_ObjectHideFlags: 0

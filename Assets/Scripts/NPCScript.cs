@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 
 public class NPCScript : MonoBehaviour
@@ -20,7 +21,7 @@ public class NPCScript : MonoBehaviour
     private bool selected;
     private GameObject exit;
     private bool ate = false;
-    private bool pressed = false;
+  //  private bool pressed = false;
 
     // Start is called before the first frame update
     private void Awake()
@@ -109,7 +110,8 @@ public class NPCScript : MonoBehaviour
         yield return new WaitForSeconds(4f);
         Debug.Log(order.type.ToString());
         table.orderPlane.SetActive(true);
-        table.orderPlane.GetComponent<Renderer>().material = order.foodImage;
+        table.orderPlane.GetComponent<ChangeOrderImage>().ChangeImage(order.foodSprite);
+        table.orderPlane.GetComponent<TimerScript>().setMaxTime();
         StartCoroutine(WaitUntilCookedFood());
     }
     IEnumerator WaitUntilFinishEating()
