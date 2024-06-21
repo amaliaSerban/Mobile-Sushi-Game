@@ -9,7 +9,9 @@ public class TimerScript : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     [SerializeField] float time=1f;
+   
     // Start is called before the first frame update
+    
     void Start()
     {
         //setMaxTime(); 
@@ -40,6 +42,16 @@ public class TimerScript : MonoBehaviour
             SetGradient(time);
            
         }
+    }
+    public void CheckTimer(Table table)
+    {
+
+        //if (fill.fillAmount > 0 && fill.fillAmount <= 25)
+        //    GameManager.GetComponent<MoneyManager>().CollectCoin();
+        //if(fill.fillAmount>25)
+        //    GameManager.GetComponent<MoneyManager>().CollectStarCoin();
+
+        table.timer = fill.fillAmount;
     }
     // Update is called once per frame
     //void Update()

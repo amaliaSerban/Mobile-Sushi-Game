@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8066443627276264303
+--- !u!1 &8292722397699377641
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8759520842374167993}
-  - component: {fileID: 3844491496222975482}
-  - component: {fileID: 8000117747798635160}
-  - component: {fileID: 6948198461351068397}
-  - component: {fileID: 1831697553147790463}
+  - component: {fileID: 6469789168281344682}
+  - component: {fileID: 362293333816237526}
+  - component: {fileID: 663980726555649141}
+  - component: {fileID: 5605341361239436615}
   m_Layer: 0
-  m_Name: Coin_Star
-  m_TagString: coinStar
+  m_Name: Environment_Bowl
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8759520842374167993
+--- !u!4 &6469789168281344682
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8066443627276264303}
+  m_GameObject: {fileID: 8292722397699377641}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.62, y: 2.56, z: 39.3}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3844491496222975482
+--- !u!33 &362293333816237526
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8066443627276264303}
-  m_Mesh: {fileID: -1931347974714207590, guid: 106dfcb755b769c4e8921bce8508bd47, type: 3}
---- !u!23 &8000117747798635160
+  m_GameObject: {fileID: 8292722397699377641}
+  m_Mesh: {fileID: 209184103980578781, guid: da2a05c00e218b648ad2c29b75785ab2, type: 3}
+--- !u!23 &663980726555649141
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8066443627276264303}
+  m_GameObject: {fileID: 8292722397699377641}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -905690159841262435, guid: 106dfcb755b769c4e8921bce8508bd47, type: 3}
+  - {fileID: 2100000, guid: 89d3fd7327fb5cf46bc570544336e1c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,36 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6948198461351068397
+--- !u!114 &5605341361239436615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8066443627276264303}
+  m_GameObject: {fileID: 8292722397699377641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd29e14683bffd34b8aa404cef0fb065, type: 3}
+  m_Script: {fileID: 11500000, guid: fbefd4bbf80f74b45a6649facea11e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1831697553147790463
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8066443627276264303}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.035100482, y: 0.047378443, z: 0.007884307}
-  m_Center: {x: 0.0030199508, y: 0.0026147915, z: 0.00025390447}
+  coinPrefab: {fileID: 1184082059959838077, guid: d1fb4574c0137f2408c01439b973a58a,
+    type: 3}
+  coinStarPrefab: {fileID: 8066443627276264303, guid: 9e5f9fcee88c9f348a79af55357ac828,
+    type: 3}

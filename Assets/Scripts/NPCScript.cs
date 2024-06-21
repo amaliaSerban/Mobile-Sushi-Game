@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
-
+using UnityEngine.Events;
 
 public class NPCScript : MonoBehaviour
 {
@@ -21,8 +21,9 @@ public class NPCScript : MonoBehaviour
     private bool selected;
     private GameObject exit;
     private bool ate = false;
-  //  private bool pressed = false;
+    //  private bool pressed = false;
 
+    UnityEvent TimerOut;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -99,6 +100,8 @@ public class NPCScript : MonoBehaviour
         {
             ate = true;
             other.GetComponent<FoodInteraction>().PlaceOnTable(table.platePosition.transform.position);
+            other.GetComponent<FoodInteraction>().getTable(table);
+            table.orderPlane.GetComponent<TimerScript>().CheckTimer(table);
             table.orderPlane.SetActive(false);
             animator.SetBool("eating", true);
             StartCoroutine(WaitUntilFinishEating());

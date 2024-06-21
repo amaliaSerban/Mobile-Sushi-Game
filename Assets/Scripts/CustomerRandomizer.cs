@@ -51,6 +51,7 @@ public class Table
     public GameObject platePosition;
     public GameObject orderPlane;
     public bool isEmpty;
+    public float timer;
 
     
 }

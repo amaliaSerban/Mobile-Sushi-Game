@@ -13,10 +13,12 @@ public class MoneyManager : MonoBehaviour
     public void CollectCoin()
     {
         money += 7;
+        Debug.Log("money: "+money);
     }
     public void CollectStarCoin()
     {
         money += 15;
+        Debug.Log("money: " + money);
     }
     // Update is called once per frame
     void Update()

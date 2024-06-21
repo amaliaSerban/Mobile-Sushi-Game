@@ -6,6 +6,8 @@ TagManager:
   tags:
   - food
   - Customer
+  - coin
+  - coinStar
   layers:
   - Default
   - TransparentFX

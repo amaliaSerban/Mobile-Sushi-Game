@@ -9,9 +9,16 @@ public class MoneyObjectScript : MonoBehaviour
     private float amplitude = 0.6f;
     private float speed=4f;
     private float initialY;
+    private GameObject GameManager;
+    public bool starCoin;
+    private void Awake()
+    {
+       
+    }
     void Start()
     {
         //StartCoroutine(WaitUntilBowlDissappear());
+        GameManager = GameObject.Find("GameManager");
         pressed = false;
         initialY=this.transform.position.y;
     }
@@ -47,18 +54,29 @@ public class MoneyObjectScript : MonoBehaviour
     {
         if (other.tag == "Player" && pressed == true)
         {
-            Destroy(gameObject);
+            CollectCoin();
            // StartCoroutine(CollectCoin());
         }
         if(other.tag=="customer")
         {
-            Destroy(gameObject);
+            CollectCoin();
+           // Destroy(gameObject);
         }
     }
-    IEnumerator CollectCoin()
-    {
-        yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);    
+    private void CollectCoin()
+    { 
+        if(starCoin==false)
+        {
+            GameManager.GetComponent<MoneyManager>().CollectCoin();
+            Destroy(gameObject);
 
+        }
+        else
+        {
+            GameManager.GetComponent<MoneyManager>().CollectStarCoin();
+            Destroy(gameObject);
+
+        } 
+       
     }
 }

@@ -16,6 +16,7 @@ public class FoodInteraction : MonoBehaviour
     private GameObject bowlInstance;
 
     private GameObject FoodSpawner;
+    private Table Table;
     
     void Start()
     {
@@ -28,7 +29,11 @@ public class FoodInteraction : MonoBehaviour
     {
         
     }
-   
+    public void getTable(Table newTable)
+    {
+        Table = newTable;
+    }
+
     private void OnTriggerEnter(Collider other) 
     {
         Debug.Log("trigger enter");
@@ -73,6 +78,7 @@ public class FoodInteraction : MonoBehaviour
         yield return new WaitForSeconds(4f);
         bowlInstance= Instantiate(EmptyBowl,gameObject.transform.position,gameObject.transform.rotation);
         bowlInstance.GetComponent<EmptyBowlScript>().StartWait();
+        bowlInstance.GetComponent<EmptyBowlScript>().getTable(Table);
         Destroy(gameObject);
     }
    
