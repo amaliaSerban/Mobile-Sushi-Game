@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - food
+  - Customer
+  - coin
+  - coinStar
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - Floor
   - Water
   - UI
-  - 
+  - NavMesh
   - 
   - 
   - 

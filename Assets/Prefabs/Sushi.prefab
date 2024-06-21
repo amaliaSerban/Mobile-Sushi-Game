@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 4189583954305748202}
   - component: {fileID: 8015453431704031163}
   - component: {fileID: 4033458604855367282}
-  - component: {fileID: 1581254122101399917}
   - component: {fileID: 9057777720814452506}
+  - component: {fileID: 6122333926198519185}
   m_Layer: 0
   m_Name: Sushi
   m_TagString: food
@@ -120,7 +120,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1581254122101399917
+--- !u!114 &9057777720814452506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171612808428072117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176a834405a46374f82ac99151613263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressed: 0
+  slot:
+    slotObj: {fileID: 0}
+    isEmpty: 0
+  player: {fileID: 0}
+  EmptyBowl: {fileID: 7859116377044283006, guid: e7ff63a4442fdcc4e9571b4acc3b9244,
+    type: 3}
+--- !u!65 &6122333926198519185
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,24 +158,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.016485665, y: 0.036381695, z: 0.019302212}
-  m_Center: {x: 0.0007205045, y: -0.012642214, z: -0.0063108504}
---- !u!114 &9057777720814452506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7171612808428072117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176a834405a46374f82ac99151613263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  player: {fileID: 0}
-  EmptyBowl: {fileID: 7859116377044283006, guid: e7ff63a4442fdcc4e9571b4acc3b9244,
-    type: 3}
+  m_Size: {x: 0.011967297, y: 0.034001112, z: 0.019302214}
+  m_Center: {x: -0.000061893465, y: -0.011451921, z: -0.006310849}
 --- !u!1001 &1051587392135335066
 PrefabInstance:
   m_ObjectHideFlags: 0

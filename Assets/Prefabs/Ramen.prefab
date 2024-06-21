@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 305572555659400008}
   - component: {fileID: 2909081538077763160}
   - component: {fileID: 2014250131971254391}
-  - component: {fileID: 7309801819995651990}
   - component: {fileID: 34110917038903898}
+  - component: {fileID: 4826425815356601352}
   m_Layer: 0
   m_Name: Ramen
   m_TagString: food
@@ -117,7 +117,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7309801819995651990
+--- !u!114 &34110917038903898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528626925757049005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176a834405a46374f82ac99151613263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressed: 0
+  slot:
+    slotObj: {fileID: 0}
+    isEmpty: 0
+  player: {fileID: 0}
+  EmptyBowl: {fileID: 8292722397699377641, guid: b5cd500fa99227e4ebf5794d6f591e51,
+    type: 3}
+--- !u!65 &4826425815356601352
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,21 +155,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019500121, y: 0.025480961, z: 0.019302212}
-  m_Center: {x: 0.0037045192, y: -0.007191854, z: -0.0063108504}
---- !u!114 &34110917038903898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4528626925757049005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176a834405a46374f82ac99151613263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  player: {fileID: 0}
-  EmptyBowl: {fileID: 8292722397699377641, guid: b5cd500fa99227e4ebf5794d6f591e51,
-    type: 3}
+  m_Size: {x: 0.011967297, y: 0.034001112, z: 0.019302214}
+  m_Center: {x: -0.000061893465, y: -0.011451921, z: -0.006310849}
