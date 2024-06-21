@@ -80,20 +80,7 @@ public class NPCScript : MonoBehaviour
 
         }
     }
-    void SetTable()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
-        {
-            if (hit.collider.name == "table")
-            {
-
-                agent.SetDestination(hit.transform.position);
-                StartCoroutine(WaitUntilReachDestination());
-            }
-
-        }
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "food" && order.type.ToString() == other.name && ate==false && selected)
