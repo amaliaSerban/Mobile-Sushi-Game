@@ -47,6 +47,5 @@ public class InstantiateCustomers : MonoBehaviour
         yield return new WaitForSeconds(15f);
         SpawnCustomer();
 
-
     }
 }

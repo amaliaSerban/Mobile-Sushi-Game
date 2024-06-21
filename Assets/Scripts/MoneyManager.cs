@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 public class MoneyManager : MonoBehaviour
 {
-    [SerializeField] int money=0;
+   public int money=0;
     [SerializeField] Text moneyText;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,7 @@ public class MoneyManager : MonoBehaviour
     {
         moneyText.GetComponent<Text>().text = money + " / 100";
     }
+    
     // Update is called once per frame
     void Update()
     {

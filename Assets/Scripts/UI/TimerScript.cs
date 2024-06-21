@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class TimerScript : MonoBehaviour
 {
 
     public Gradient gradient;
     public Image fill;
-    [SerializeField] float time=1f;
-   
+    public float time=1f;
+
+    public UnityEvent TimerWentOut;
     // Start is called before the first frame update
     
     void Start()
@@ -41,6 +43,10 @@ public class TimerScript : MonoBehaviour
             time -= 0.02f;
             SetGradient(time);
            
+        }
+        if(time<=0)
+        {
+            TimerWentOut.Invoke();
         }
     }
     public void CheckTimer(Table table)

@@ -21,9 +21,11 @@ public class NPCScript : MonoBehaviour
     private bool selected;
     private GameObject exit;
     private bool ate = false;
+    private bool timeWentOut = false;
     //  private bool pressed = false;
 
-    UnityEvent TimerOut;
+    GameObject GameManager;
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -39,8 +41,12 @@ public class NPCScript : MonoBehaviour
         spawnerObj = GameObject.Find("FoodSpawner");
 
         exit = GameObject.Find("spawnPoint");
+
+        GameManager = GameObject.Find("GameManager");
+
         ate = false;
         selected=false;
+        timeWentOut = false;
     }
     void Start()
     {
@@ -63,6 +69,7 @@ public class NPCScript : MonoBehaviour
             }
             
         }
+        
     }
     public void setTable(Table randomTable)
     {
@@ -102,6 +109,7 @@ public class NPCScript : MonoBehaviour
         table.orderPlane.SetActive(true);
         table.orderPlane.GetComponent<ChangeOrderImage>().ChangeImage(order.foodSprite);
         table.orderPlane.GetComponent<TimerScript>().setMaxTime();
+        StartCoroutine(Timer());
         StartCoroutine(WaitUntilCookedFood());
     }
     IEnumerator WaitUntilFinishEating()
@@ -130,11 +138,29 @@ public class NPCScript : MonoBehaviour
         Debug.Log(agent.remainingDistance);
         yield return new WaitUntil(() => agent.remainingDistance <= 0);
         animator.SetBool("walking", false);
-        if(ate==false)
-             StartCoroutine(WaitToOrder());
-        else Destroy(gameObject);
+        if (ate == false && timeWentOut == false)
+            StartCoroutine(WaitToOrder());
+        else
+        {
+            Destroy(gameObject);
+            GameManager.GetComponent<Level>().customerLeft();
+        }
     }
-  }
+    public void TimerWentOut()
+    {
+        timeWentOut = true;
+        table.orderPlane.SetActive(false);
+        agent.SetDestination(exit.transform.position);
+        randomizer.GetComponent<CustomerRandomizer>().emptyTable(table);
+        animator.SetBool("walking", true);
+        StartCoroutine(WaitUntilReachDestination());
+    }
+    IEnumerator Timer()
+    {
+        yield return new WaitUntil(() => table.orderPlane.GetComponent<TimerScript>().time <= 0);
+        TimerWentOut();
+    }
+}
 
 
 
