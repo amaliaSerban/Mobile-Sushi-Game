@@ -9,9 +9,9 @@ public class WinScreen : MonoBehaviour
     // te
     private GameObject GameManager;
     [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject loseScreen;
     [SerializeField] Text winText;
     [SerializeField] Text moneyText;
-    [SerializeField] GameObject add;
     public UnityEvent ShowWinScreen;
 
     private int day=1;
@@ -26,12 +26,13 @@ public class WinScreen : MonoBehaviour
         moneyText.text = GameManager.GetComponent<MoneyManager>().money + " /100";
         if (GameManager.GetComponent<MoneyManager>().money >= 100)
         {
-            winText.text = "Win";
-            add.SetActive(false);
+            winText.text = "You Won!";
+            winScreen.SetActive(true);
         }
         else
         {
-            winText.text = "Lost";
+            winText.text = "You Lost";
+            loseScreen.SetActive(true);
         }
     }
     // Update is called once per frame
