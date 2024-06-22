@@ -10,6 +10,7 @@ public class MoneyObjectScript : MonoBehaviour
     private float speed=4f;
     private float initialY;
     private GameObject GameManager;
+    [SerializeField] private GameObject CoinParticlePrefab;
     
     public bool starCoin;
     private void Awake()
@@ -72,13 +73,14 @@ public class MoneyObjectScript : MonoBehaviour
         if(starCoin==false)
         {
             GameManager.GetComponent<MoneyManager>().CollectCoin();
-            
+            Instantiate(CoinParticlePrefab, this.transform);    
             Destroy(gameObject);
 
         }
         else
         {
             GameManager.GetComponent<MoneyManager>().CollectStarCoin();
+            Instantiate(CoinParticlePrefab, this.transform.position,this.transform.rotation);
             Destroy(gameObject);
 
         } 

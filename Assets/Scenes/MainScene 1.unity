@@ -4508,7 +4508,7 @@ MonoBehaviour:
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 6554
     ctime1: 16384
-    ctime2: 32768
+    ctime2: 32511
     ctime3: 65535
     ctime4: 0
     ctime5: 0
@@ -6240,7 +6240,7 @@ MonoBehaviour:
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 6554
     ctime1: 16384
-    ctime2: 32768
+    ctime2: 32511
     ctime3: 65535
     ctime4: 0
     ctime5: 0
@@ -8532,18 +8532,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0.92560613, b: 0, a: 1}
-    key2: {r: 0.012474853, g: 0.7484276, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.754717, g: 0.06882632, b: 0.06882632, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0.81214345, b: 0, a: 0}
+    key3: {r: 0.012474853, g: 0.7484276, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 20689
-    ctime1: 39707
-    ctime2: 65535
-    ctime3: 0
+    ctime0: 6554
+    ctime1: 16384
+    ctime2: 32511
+    ctime3: 65535
     ctime4: 0
     ctime5: 0
     ctime6: 0
@@ -8558,7 +8558,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 1
     m_ColorSpace: -1
-    m_NumColorKeys: 3
+    m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 1294845470}
   time: 0
@@ -9445,18 +9445,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0.92560613, b: 0, a: 1}
-    key2: {r: 0.012474853, g: 0.7484276, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.754717, g: 0.06882632, b: 0.06882632, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0.81214345, b: 0, a: 0}
+    key3: {r: 0.012474853, g: 0.7484276, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 20689
-    ctime1: 39707
-    ctime2: 65535
-    ctime3: 0
+    ctime0: 6554
+    ctime1: 16384
+    ctime2: 32511
+    ctime3: 65535
     ctime4: 0
     ctime5: 0
     ctime6: 0
@@ -9471,7 +9471,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 1
     m_ColorSpace: -1
-    m_NumColorKeys: 3
+    m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 250038153}
   time: 1
@@ -25117,18 +25117,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0.92560613, b: 0, a: 1}
-    key2: {r: 0.012474853, g: 0.7484276, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.754717, g: 0.06882632, b: 0.06882632, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 0.81214345, b: 0, a: 0}
+    key3: {r: 0.012474853, g: 0.7484276, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 20689
-    ctime1: 39707
-    ctime2: 65535
-    ctime3: 0
+    ctime0: 6554
+    ctime1: 16384
+    ctime2: 32511
+    ctime3: 65535
     ctime4: 0
     ctime5: 0
     ctime6: 0
@@ -25143,7 +25143,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 1
     m_ColorSpace: -1
-    m_NumColorKeys: 3
+    m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 2086038179}
   time: 1
