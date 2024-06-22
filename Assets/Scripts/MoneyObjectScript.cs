@@ -10,6 +10,7 @@ public class MoneyObjectScript : MonoBehaviour
     private float speed=4f;
     private float initialY;
     private GameObject GameManager;
+    
     public bool starCoin;
     private void Awake()
     {
@@ -54,20 +55,24 @@ public class MoneyObjectScript : MonoBehaviour
     {
         if (other.tag == "Player" && pressed == true)
         {
+            GameManager.GetComponent<AudioSource>().Play();
             CollectCoin();
            // StartCoroutine(CollectCoin());
         }
         if(other.tag=="customer")
         {
+            GameManager.GetComponent<AudioSource>().Play();
             CollectCoin();
            // Destroy(gameObject);
         }
     }
     private void CollectCoin()
-    { 
+    {
+        
         if(starCoin==false)
         {
             GameManager.GetComponent<MoneyManager>().CollectCoin();
+            
             Destroy(gameObject);
 
         }

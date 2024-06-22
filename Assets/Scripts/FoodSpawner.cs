@@ -9,6 +9,7 @@ public class FoodSpawner : MonoBehaviour
     [SerializeField] GameObject RamenPrefab;
     [SerializeField] GameObject UdonPrefab;
     [SerializeField] GameObject SushiPrefab;
+    private AudioSource audioSource;
 
     public Slot[] slots;
 
@@ -16,7 +17,7 @@ public class FoodSpawner : MonoBehaviour
     //[SerializeField] 
     void Start()
     {
-        
+        audioSource=GetComponent<AudioSource>();    
     }
     public void SpawnFood(Order food)
     {
@@ -28,6 +29,7 @@ public class FoodSpawner : MonoBehaviour
                     if(newSlot != null)
                     {
                         GameObject foodPrefab = Instantiate(RamenPrefab, newSlot.slotObj.transform.position, newSlot.slotObj.transform.rotation);
+                        audioSource.Play();
                         foodPrefab.GetComponent<FoodInteraction>().slot = newSlot;
                         foodPrefab.name = "Ramen"; break;
                     }
@@ -42,6 +44,7 @@ public class FoodSpawner : MonoBehaviour
                     if (newSlot != null)
                     {
                         GameObject foodPrefab = Instantiate(UdonPrefab, newSlot.slotObj.transform.position, newSlot.slotObj.transform.rotation);
+                        audioSource.Play();
                         foodPrefab.GetComponent<FoodInteraction>().slot = newSlot;
                         foodPrefab.name = "Udon"; break;
                     }
@@ -54,6 +57,7 @@ public class FoodSpawner : MonoBehaviour
                     if (newSlot != null)
                     {
                         GameObject foodPrefab=Instantiate(SushiPrefab, newSlot.slotObj.transform.position, newSlot.slotObj.transform.rotation);
+                        audioSource.Play();
                         foodPrefab.GetComponent<FoodInteraction>().slot = newSlot;
                         foodPrefab.name = "Sushi"; break;
                     }
