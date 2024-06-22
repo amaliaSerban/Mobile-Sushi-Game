@@ -22,6 +22,7 @@ public class WinScreen : MonoBehaviour
     }
     public void EndLevel()
     {
+        Time.timeScale = 1f;
         ShowWinScreen.Invoke();
         moneyText.text = GameManager.GetComponent<MoneyManager>().money + " /100";
         if (GameManager.GetComponent<MoneyManager>().money >= 100)
@@ -31,7 +32,7 @@ public class WinScreen : MonoBehaviour
         }
         else
         {
-            winText.text = "You Lost";
+            winText.text = "You Lost!";
             loseScreen.SetActive(true);
         }
     }

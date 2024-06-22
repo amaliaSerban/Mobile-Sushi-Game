@@ -9157,7 +9157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Won!
+  m_Text: You Lost!
 --- !u!222 &703731209
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12096,7 +12096,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 40, y: -0.34635162}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: -202.14981, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919244579
 MonoBehaviour:
@@ -12145,7 +12145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 / 100
+  m_Text: 97 / 100
 --- !u!222 &919244581
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15753,7 +15753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1169446049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17865,11 +17865,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1359022936}
+  m_Father: {fileID: 1748825487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.839}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 183.3, y: -87.42001}
+  m_AnchoredPosition: {x: 183.3, y: 216.57996}
   m_SizeDelta: {x: 149, y: 142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &1325546887
@@ -18350,7 +18350,6 @@ RectTransform:
   m_Children:
   - {fileID: 1506986062}
   - {fileID: 703731207}
-  - {fileID: 1325546886}
   m_Father: {fileID: 1475370406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -19792,7 +19791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1475370406
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23840,7 +23839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1748825487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23854,6 +23853,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 939920308}
+  - {fileID: 1325546886}
   - {fileID: 1960866405}
   m_Father: {fileID: 1475370406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
