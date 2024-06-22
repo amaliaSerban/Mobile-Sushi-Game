@@ -256,7 +256,7 @@ PlayerSettings:
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
-  useCustomGradlePropertiesTemplate: 0
+  useCustomGradlePropertiesTemplate: 1
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 3
@@ -736,7 +736,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: LEVELPLAY_DEPENDENCIES_INSTALLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -850,7 +851,7 @@ PlayerSettings:
   cloudProjectId: 670f1701-266f-48fa-a1d5-bff8d4d103c3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Mobile Sushi Game
+  projectName: Panda Sushi Express
   organizationId: amalia1757
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
