@@ -74,7 +74,7 @@ public class MoneyObjectScript : MonoBehaviour
         if(starCoin==false)
         {
             GameManager.GetComponent<MoneyManager>().CollectCoin();
-            Instantiate(CoinParticlePrefab, this.transform);    
+            Instantiate(CoinParticlePrefab, this.transform.position, this.transform.rotation);    
             Destroy(gameObject);
 
         }
