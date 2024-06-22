@@ -4929,7 +4929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd29e14683bffd34b8aa404cef0fb065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinParticlePrefab: {fileID: 238494735789684259, guid: 7f00fe2e3e13ac641b9054cb9446114c,
+  CoinParticlePrefab: {fileID: 238494735789684259, guid: bce50f42afd7aee43811d4e24a52aa91,
+    type: 3}
+  CoinStarParticlePrefab: {fileID: 238494735789684259, guid: 7f00fe2e3e13ac641b9054cb9446114c,
     type: 3}
   starCoin: 1
 --- !u!65 &1831697553147790463
