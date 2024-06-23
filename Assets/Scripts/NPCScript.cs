@@ -21,6 +21,7 @@ public class NPCScript : MonoBehaviour
     private bool selected;
     private GameObject exit;
     private bool ate = false;
+    private bool ordered = false;
     private bool timeWentOut = false;
     //  private bool pressed = false;
 
@@ -45,6 +46,7 @@ public class NPCScript : MonoBehaviour
         GameManager = GameObject.Find("GameManager");
 
         ate = false;
+        ordered = false;
         selected=false;
         timeWentOut = false;
     }
@@ -90,7 +92,7 @@ public class NPCScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "food" && order.type.ToString() == other.name && ate==false && selected)
+        if (other.tag == "food" && order.type.ToString() == other.name && ate==false && selected && ordered)
         {
             ate = true;
             other.GetComponent<FoodInteraction>().PlaceOnTable(table.platePosition.transform.position);
@@ -110,6 +112,7 @@ public class NPCScript : MonoBehaviour
         table.orderPlane.GetComponent<ChangeOrderImage>().ChangeImage(order.foodSprite);
         table.orderPlane.GetComponent<TimerScript>().setMaxTime();
         StartCoroutine(Timer());
+        ordered = true;
         StartCoroutine(WaitUntilCookedFood());
     }
     IEnumerator WaitUntilFinishEating()
@@ -142,13 +145,14 @@ public class NPCScript : MonoBehaviour
             StartCoroutine(WaitToOrder());
         else
         {
-            Destroy(gameObject);
             GameManager.GetComponent<Level>().customerLeft();
+            Destroy(gameObject);
         }
     }
     public void TimerWentOut()
     {
         timeWentOut = true;
+        ate = true;
         table.orderPlane.SetActive(false);
         agent.SetDestination(exit.transform.position);
         randomizer.GetComponent<CustomerRandomizer>().emptyTable(table);

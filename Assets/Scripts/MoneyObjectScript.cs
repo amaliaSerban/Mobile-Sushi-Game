@@ -84,7 +84,7 @@ public class MoneyObjectScript : MonoBehaviour
             Instantiate(CoinStarParticlePrefab, this.transform.position,this.transform.rotation);
             Destroy(gameObject);
 
-        } 
-       
+        }
+        GameManager.GetComponent<Level>().moneyCollected();
     }
 }

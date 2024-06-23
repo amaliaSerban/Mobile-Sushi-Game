@@ -6,16 +6,30 @@ public class InstantiateCustomers : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject spawnObj;
+    private GameObject GameManager;
+   
+    private int customers;
     private void Awake()
     {
-        StartCoroutine(SpawnCustomers());
-
+        GameManager = GameObject.Find("GameManager");
+        setDay();
+       StartInstantiating();
+    }
+    public void setDay()
+    {
+       
+        customers= GameManager.GetComponent<Level>().customers;
     }
     void Update()
     {
            
        
        
+    }
+    public void StartInstantiating()
+    {
+        StartCoroutine(SpawnCustomers());
+
     }
     void SpawnCustomer()
     {
@@ -25,27 +39,20 @@ public class InstantiateCustomers : MonoBehaviour
         customer.GetComponent<NPCScript>().setTable(newCustomer.table);
     }
     IEnumerator SpawnCustomers()
-    { 
+    {
         yield return new WaitForSeconds(1.5f);
         SpawnCustomer();
 
         yield return new WaitForSeconds(4f);
-        SpawnCustomer();
+       SpawnCustomer();
 
-        yield return new WaitForSeconds(7f);
-        SpawnCustomer();
+       yield return new WaitForSeconds(7f);
+       SpawnCustomer();
 
-        yield return new WaitForSeconds(15f);
-        SpawnCustomer();
-
-        yield return new WaitForSeconds(15f);
-        SpawnCustomer();
-
-        yield return new WaitForSeconds(15f);
-        SpawnCustomer();
-
-        yield return new WaitForSeconds(15f);
-        SpawnCustomer();
-
+      for (int i = 0; i < customers - 3; i++)
+      {
+          yield return new WaitForSeconds(15f);
+          SpawnCustomer();
+      }
     }
 }

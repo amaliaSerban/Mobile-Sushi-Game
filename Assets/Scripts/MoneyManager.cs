@@ -29,7 +29,7 @@ public class MoneyManager : MonoBehaviour
     }
     private void UpdateUI()
     {
-        moneyText.GetComponent<Text>().text = money + " / 100";
+        moneyText.GetComponent<Text>().text = money + " / " +gameObject.GetComponent<Level>().target;
     }
     
     // Update is called once per frame

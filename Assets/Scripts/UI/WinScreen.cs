@@ -11,16 +11,18 @@ public class WinScreen : MonoBehaviour
     private GameObject GameManager;
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject loseScreen;
+    [SerializeField] Text DayText;
     [SerializeField] Text winText;
     [SerializeField] Text moneyText;
+    [SerializeField] GameObject Medal;
     public UnityEvent ShowWinScreen;
 
     private AudioSource winAudioSource;
     private AudioSource MainAudioSource;
     [SerializeField] AudioClip win;
     [SerializeField] AudioClip lose;
+    [SerializeField] AudioClip money;
 
-    private int day=1;
     void Start()
     {
         GameManager = GameObject.Find("GameManager");
@@ -34,13 +36,17 @@ public class WinScreen : MonoBehaviour
         Time.timeScale = 0f;
         MainAudioSource.Stop();
         ShowWinScreen.Invoke();
-        moneyText.text = GameManager.GetComponent<MoneyManager>().money + " /100";
-        if (GameManager.GetComponent<MoneyManager>().money >= 100)
+        DayText.text = "Day " + GameManager.GetComponent<Level>().day;
+        moneyText.text = GameManager.GetComponent<MoneyManager>().money + " /" + GameManager.GetComponent<Level>().target;
+        if (GameManager.GetComponent<MoneyManager>().money >= GameManager.GetComponent<Level>().target)
         {
             winAudioSource.clip = win;
             winAudioSource.Play();
             winText.text = "You Won!";
             winScreen.SetActive(true);
+            Medal.SetActive(true);
+            Medal.GetComponent<Animation>().Play();
+            
         }
         else
         {
@@ -48,7 +54,9 @@ public class WinScreen : MonoBehaviour
             winAudioSource.Play();
             winText.text = "You Lost!";
             loseScreen.SetActive(true);
+            Medal.SetActive(false);
         }
+        winAudioSource.clip = money;
     }
     // Update is called once per frame
     void Update()

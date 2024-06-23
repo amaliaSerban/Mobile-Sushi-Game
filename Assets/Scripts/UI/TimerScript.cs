@@ -10,17 +10,25 @@ public class TimerScript : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public float time=1f;
+    public float timeSpeed;
+    private GameObject GameManager;
 
     public UnityEvent TimerWentOut;
+
+
     // Start is called before the first frame update
     
-    void Start()
+    void Awake()
     {
         //setMaxTime(); 
-      
+        GameManager = GameObject.Find("GameManager");
+       
+
+
     }
     public void setMaxTime()
     {
+        timeSpeed = GameManager.GetComponent<Level>().timerSpeed;
         time = 1f;
         fill.fillAmount = time;
         BeginTimer();
@@ -40,7 +48,7 @@ public class TimerScript : MonoBehaviour
         while(time>=0)
         { 
             yield return new WaitForSeconds(1f);
-            time -= 0.02f;
+            time -= timeSpeed;
             SetGradient(time);
            
         }
