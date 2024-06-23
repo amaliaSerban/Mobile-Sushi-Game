@@ -155,6 +155,7 @@ public class NPCScript : MonoBehaviour
         ate = true;
         table.orderPlane.SetActive(false);
         agent.SetDestination(exit.transform.position);
+        GameManager.GetComponent<Level>().moneyCollected();
         randomizer.GetComponent<CustomerRandomizer>().emptyTable(table);
         animator.SetBool("walking", true);
         StartCoroutine(WaitUntilReachDestination());

@@ -22,6 +22,8 @@ public class FoodInteraction : MonoBehaviour
     {
         player = GameObject.Find("Player");
         FoodSpawner = GameObject.Find("FoodSpawner");
+        StartCoroutine(Timer());
+
     }
 
     // Update is called once per frame
@@ -50,6 +52,7 @@ public class FoodInteraction : MonoBehaviour
                 {
                     gameObject.transform.position = other.GetComponent<TouchMovement>().rightHand.transform.position;
                 }
+                StopCoroutine(Timer());
                 gameObject.transform.parent = other.transform;
                 other.GetComponent<TouchMovement>().freeHands--;
                 pressed = false;
@@ -79,6 +82,18 @@ public class FoodInteraction : MonoBehaviour
         bowlInstance= Instantiate(EmptyBowl,gameObject.transform.position,gameObject.transform.rotation);
         bowlInstance.GetComponent<EmptyBowlScript>().StartWait();
         bowlInstance.GetComponent<EmptyBowlScript>().getTable(Table);
+        Destroy(gameObject);
+    }
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(50f);
+        for (int i = 0; i <FoodSpawner.GetComponent<FoodSpawner>().slots.Length; i++)
+        {
+            if (FoodSpawner.GetComponent<FoodSpawner>().slots[i].slotObj == slot.slotObj)
+            {
+                FoodSpawner.GetComponent<FoodSpawner>().slots[i].isEmpty = true;
+            }
+        }
         Destroy(gameObject);
     }
    

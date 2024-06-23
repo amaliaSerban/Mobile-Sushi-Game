@@ -43,15 +43,15 @@ public class InstantiateCustomers : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         SpawnCustomer();
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(7f);
        SpawnCustomer();
 
-       yield return new WaitForSeconds(7f);
+       yield return new WaitForSeconds(10f);
        SpawnCustomer();
 
       for (int i = 0; i < customers - 3; i++)
       {
-          yield return new WaitForSeconds(15f);
+          yield return new WaitForSeconds(20f);
           SpawnCustomer();
       }
     }

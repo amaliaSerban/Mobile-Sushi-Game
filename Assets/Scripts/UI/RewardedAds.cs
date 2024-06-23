@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
+using UnityEngine.Events;
 
 public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
@@ -11,6 +12,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
     [SerializeField] GameObject loadFailed;
     string _adUnitId = null; // This will remain null for unsupported platforms
 
+    public UnityEvent AdWatched;
     void Awake()
     {
         // Get the Ad Unit ID for the current platform:
@@ -64,6 +66,8 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
+            AdWatched.Invoke();
+
         }
     }
 

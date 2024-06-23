@@ -82,7 +82,16 @@ public class FoodSpawner : MonoBehaviour
             slots[2].isEmpty = false;
             return slots[2];
         }
-       
+        if (slots[3].isEmpty == true)
+        {
+            slots[3].isEmpty = false;
+            return slots[3];
+        }
+        if (slots[4].isEmpty == true)
+        {
+            slots[4].isEmpty = false;
+            return slots[4];
+        }
         return null;
     }
 
